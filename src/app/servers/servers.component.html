@@ -17,6 +17,13 @@ placeholder="Enter Server Name"  [(ngModel)]="serverName"
 <hr>
 
 
-<div class="alert alert-info">{{serverCreationStatus}}</div>
+<div *ngIf="serverCreatedStatus; else noServer"class="alert alert-info">{{serverCreationStatusMsg}}</div>
+
+
+
 <app-server></app-server>
 <app-server></app-server>
+
+<ng-template #noServer>
+    <p class="alert alert-warning"> No servers were created!!!</p>
+</ng-template>

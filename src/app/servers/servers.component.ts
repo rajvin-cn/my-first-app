@@ -12,8 +12,10 @@ export class ServersComponent implements OnInit {
   }
 
   allowNewServer: boolean = false;
-  serverCreationStatus:string = " No Servers Created!!";
+  serverCreationStatusMsg:string = " ";
   serverName:string ="Not set";
+  serverCreatedStatus:boolean = false;
+  serverList:string[] =[];
 
   constructor()
   {
@@ -22,8 +24,8 @@ export class ServersComponent implements OnInit {
  
   onAddNewServer()
   {
-    this.serverCreationStatus ="New Servers are getting Added , The Name of the Server is " + this.serverName;
-
+    this.serverCreationStatusMsg ="New Servers are getting Added , The Name of the Server is " + this.serverName;
+    this.serverCreatedStatus = true;
    
 }
 onUpdateServerName(event: Event) 
